@@ -31,8 +31,9 @@ def main():
         
         screen.fill("black")
         
-        player.update(dt)
-        player.draw(screen)
+        updatable.update(dt)
+        for objects in drawable:
+            objects.draw(screen)
         pygame.display.flip()
        
         dt = clock.tick(FPS) / 1000
